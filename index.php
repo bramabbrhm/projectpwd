@@ -32,14 +32,10 @@
       </div>
       
       <!-- Tombol ORDER dengan efek -->
-      <button class="btn btn-danger fw-bold px-4 py-2" style="
-        background: #E31837;
-        border: none;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        transition: all 0.3s;
-      ">
-        <i class="fas fa-shopping-cart me-2"></i>ORDER NOW
-      </button>
+      <a href="logincust.php" class="btn btn-danger fw-bold px-4 py-2" 
+   style="background: #E31837; border: none; box-shadow: 0 4px 8px rgba(0,0,0,0.2); transition: all 0.3s;">
+   <i class="fas fa-shopping-cart me-2"></i>ORDER NOW
+</a>
     </div>
   </div>
 </nav>
