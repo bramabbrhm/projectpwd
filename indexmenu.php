@@ -71,7 +71,7 @@
   }
 </style>
 
-<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima est aperiam explicabo, atque libero, dolorem modi unde, et in adipisci perspiciatis odio possimus soluta quidem similique.</p>
+
 <!-- tambahain menu disini -->
 <div class="container py-5">
   <div class="row g-4">
@@ -108,6 +108,73 @@
       </div>
     </div>
   </div>
+  <div class="row g-4">
+    <!-- Menu 4 -->
+    <div class="col-md-4">
+      <div class="card menu-card h-100" data-bs-toggle="modal" data-bs-target="#menuModal" onclick="setModalContent('Nasi Goreng', 'Nasi goreng spesial dengan bumbu rempah.')">
+        <img src="asset_menu/nasi_goreng.png" class="menu-img card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Nasi Goreng Spesial</h5>
+          <p class="text-muted">Rp 20.000</p>
+        </div>
+      </div>
+    </div>
+    <!-- Menu 5 -->
+    <div class="col-md-4">
+      <div class="card menu-card h-100" data-bs-toggle="modal" data-bs-target="#menuModal" onclick="setModalContent('Es Teh', 'Es teh manis dengan gula aren.')">
+        <img src="asset_menu/es_teh.png" class="menu-img card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Es Teh Manis</h5>
+          <p class="text-muted">Rp 5.000</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Menu 6 -->
+    <div class="col-md-4">
+      <div class="card menu-card h-100" data-bs-toggle="modal" data-bs-target="#menuModal" onclick="setModalContent('Roti Bakar', 'Roti bakar dengan keju dan coklat.')">
+        <img src="asset_menu/roti_bakar.png" class="menu-img card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Roti Bakar</h5>
+          <p class="text-muted">Rp 12.000</p>
+        </div>
+      </div>
+    </div>
+  </div> <!-- Tutup row kedua -->
+
+  <div class="row g-4">
+    <!-- Menu 7 -->
+    <div class="col-md-4">
+      <div class="card menu-card h-100" data-bs-toggle="modal" data-bs-target="#menuModal" onclick="setModalContent('Nasi Goreng', 'Nasi goreng spesial dengan bumbu rempah.')">
+        <img src="asset_menu/nasi_goreng.png" class="menu-img card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Nasi Goreng Spesial</h5>
+          <p class="text-muted">Rp 20.000</p>
+        </div>
+      </div>
+    </div>
+    <!-- Menu 8 -->
+    <div class="col-md-4">
+      <div class="card menu-card h-100" data-bs-toggle="modal" data-bs-target="#menuModal" onclick="setModalContent('Es Teh', 'Es teh manis dengan gula aren.')">
+        <img src="asset_menu/es_teh.png" class="menu-img card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Es Teh Manis</h5>
+          <p class="text-muted">Rp 5.000</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Menu 9 -->
+    <div class="col-md-4">
+      <div class="card menu-card h-100" data-bs-toggle="modal" data-bs-target="#menuModal" onclick="setModalContent('Roti Bakar', 'Roti bakar dengan keju dan coklat.')">
+        <img src="asset_menu/roti_bakar.png" class="menu-img card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Roti Bakar</h5>
+          <p class="text-muted">Rp 12.000</p>
+        </div>
+      </div>
+    </div>
+  </div> <!-- Tutup row ketiga -->
 </div>
 
 <!-- Modal Popup Mengambang -->
