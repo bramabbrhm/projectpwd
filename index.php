@@ -60,7 +60,7 @@
   <div class="carousel-inner">
     <!-- Slide 1 -->
     <div class="carousel-item active">
-      <img src="assets/Best Seller.png" class="d-block w-100" alt="Bubur Kacang Ijo">
+      <img src="assets_index/Best Seller.png" class="d-block w-100" alt="Bubur Kacang Ijo">
       <div class="carousel-caption d-none d-md-block">
         <!-- <h5>Bubur Kacang Ijo Special</h5>
         <p>Rp 12.000</p> -->
@@ -69,7 +69,7 @@
     
     <!-- Slide 2 -->
     <div class="carousel-item">
-      <img src="assets/www.boerjo.com.png" class="d-block w-100" alt="Bubur Sumsum">
+      <img src="assets_index/www.boerjo.com.png" class="d-block w-100" alt="Bubur Sumsum">
       <div class="carousel-caption d-none d-md-block">
         <!-- <h5>Bubur Sumsum Pandan</h5>
         <p>Rp 10.000</p> -->
@@ -78,7 +78,7 @@
     
     <!-- Slide 3 -->
     <div class="carousel-item">
-      <img src="assets/NASI GOWENG.png" class="d-block w-100" alt="Es Teh">
+      <img src="assets_index/NASI GOWENG.png" class="d-block w-100" alt="Es Teh">
       <div class="carousel-caption d-none d-md-block">
         <!-- <h5>Es Teh Manis</h5>
         <p>Rp 5.000</p> -->
