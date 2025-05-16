@@ -5,6 +5,7 @@
     left: 50%;
     transform: translateX(-50%);
     width: max-content; /* Prevents text squeezing */
+    
   }
   .navbar-nav {
     font-family: 'Segoe UI', Tahoma, sans-serif;
@@ -80,7 +81,7 @@
             border: none;
         }
         .welcome-header {
-            background-color: #28a745;
+            background-color: #000000;
             color: white;
             padding: 1.5rem;
             text-align: center;

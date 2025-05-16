@@ -29,14 +29,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../projectpwd/css/styling.css">
     <style>
+        .test{
 
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="card welcome-card">
             <div class="welcome-header">
-                <div class="brand-logo" style="font-family: 'Pacifico', cursive;">BoerJoe</div>
+                <div class="brand-logo"> 
+                    <span style="color: #FFD700;">B</span>oer<span style="color: #FFD700;">J</span>o
+                </div>
                 <p></p>
             </div>
             <div class="form-container">
@@ -62,7 +66,8 @@
                         </select>
                     </div>
                     <div class="d-grid">
-                        <button type="submit" class="p-3 mb-0 bg-dark text-white position-relative">View Menu</button>
+                        <button type="submit" class="p-3 mb-0 bg-dark text-white position-relative"
+                        style="background-color: #212529;">View Menu</button>
                     </div>
                 </form>
             </div>
@@ -72,5 +77,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 </body>
 </html>
