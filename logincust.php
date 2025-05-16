@@ -27,7 +27,7 @@
     <title>BoerJoe - Welcome</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../Project/css/styling.css">
+  <link rel="stylesheet" href="../projectpwd/css/styling.css">
     <style>
 
     </style>
@@ -43,7 +43,7 @@
                 <form id="welcomeForm" action="" method="POST">
                     <div class="mb-4">
                         <label for="name" class="form-label">Masukkan Nama Anda</label>
-                        <input type="text" class="form-control form-control-lg" id="name" name="name" required placeholder="Maulana Yorin Habibi    ">
+                        <input type="text" class="form-control form-control-lg" id="name" name="name" required placeholder="Nama">
                     </div>
                     <div class="mb-4">
                         <label for="tableNumber" class="form-label">Masukkan Nomor Meja anda</label>
@@ -62,7 +62,7 @@
                         </select>
                     </div>
                     <div class="d-grid">
-                        <button type="submit" class="btn btn-success btn-lg">View Menu</button>
+                        <button type="submit" class="p-3 mb-0 bg-dark text-white position-relative">View Menu</button>
                     </div>
                 </form>
             </div>
