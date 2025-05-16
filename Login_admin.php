@@ -23,7 +23,7 @@
                 <form id="welcomeForm" action="menu.php" method="get">
                     <div class="mb-4">
                         <label for="name" class="form-label">Masukkan Nama Anda</label>
-                        <input type="text" class="form-control form-control-lg" id="name" name="name" required placeholder="Nama">
+                        <input type="text" class="form-control form-control-lg" id="name" name="name" required placeholder="Maulana Yorin Habibi    ">
                     </div>
                     <div class="mb-4">
                         <label for="tableNumber" class="form-label">Masukkan Nomor Meja anda</label>
