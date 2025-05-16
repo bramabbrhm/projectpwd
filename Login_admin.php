@@ -1,24 +1,3 @@
-<?php
-    // if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // include "koneksi.php";
-    
-    // $nama_pelanggan = $_POST['nama_pelanggan'];
-    // $no_meja = $_POST['no_meja'];
-    // // $result = mysqli_query($connect, "SELECT no_pesanan FROM pesanan WHERE no_meja = '$no_meja'");
-    // // if (mysqli_num_rows($result) > 0) {
-    // //     $no_meja_error = "Mohon maaf meja ini sudah ditempati";
-    // // }
-    
-    // $query = mysqli_query($connect, "INSERT INTO pesanan VALUES ('','','$no_meja','$nama_pelanggan','','','')")
-    // or die(mysqli_error($connect));
-    // if ($query) {
-    //     header("Location: landing.php");
-    //     exit;
-    // } else {
-    //     echo "<script>alert('Registration Failed');</script>";
-    // }
-    // }  
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../Project/css/styling.css">
     <style>
-
+/* ppp */
     </style>
 </head>
 <body>
@@ -38,16 +17,17 @@
             <div class="welcome-header">
                 <div class="brand-logo" style="font-family: 'Pacifico', cursive;">BoerJoe</div>
                 <p></p>
+                <!-- ppp -->
             </div>
             <div class="form-container">
-                <form id="welcomeForm" action="" method="POST">
+                <form id="welcomeForm" action="menu.php" method="get">
                     <div class="mb-4">
                         <label for="name" class="form-label">Masukkan Nama Anda</label>
-                        <input type="text" class="form-control form-control-lg" id="name" name="name" required placeholder="Maulana Yorin Habibi    ">
+                        <input type="text" class="form-control form-control-lg" id="name" name="name" required placeholder="User">
                     </div>
                     <div class="mb-4">
-                        <label for="tableNumber" class="form-label">Masukkan Nomor Meja anda</label>
-                        <select class="form-select form-select-lg" id="tableNumber" name="no_meja" required>
+                        <label for="tableNumber" class="form-label">Password</label>
+                        <select class="form-select form-select-lg" id="tableNumber" name="tableNumber" required>
                             <option value="" selected disabled>Pilih disini</option>
                             <option value="1">1</option>
                             <option value="2"> 2</option>
