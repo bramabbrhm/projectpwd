@@ -23,10 +23,10 @@
                 <form id="welcomeForm" action="menu.php" method="get">
                     <div class="mb-4">
                         <label for="name" class="form-label">Masukkan Nama Anda</label>
-                        <input type="text" class="form-control form-control-lg" id="name" name="name" required placeholder="Maulana Yorin Habibi    ">
+                        <input type="text" class="form-control form-control-lg" id="name" name="name" required placeholder="User">
                     </div>
                     <div class="mb-4">
-                        <label for="tableNumber" class="form-label">Masukkan Nomor Meja anda</label>
+                        <label for="tableNumber" class="form-label">Password</label>
                         <select class="form-select form-select-lg" id="tableNumber" name="tableNumber" required>
                             <option value="" selected disabled>Pilih disini</option>
                             <option value="1">1</option>
