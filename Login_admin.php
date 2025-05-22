@@ -28,34 +28,24 @@
             </div>
             
             <div class="card-body p-4">
-                <form>
+                <form action="" method="POST">
                     <!-- Username -->
                     <div class="mb-3">
                         <label class="form-label fw-bold">Username</label>
-                        <input type="text" class="form-control" placeholder="Enter username" required>
+                        <input type="text" class="form-control" name="username" placeholder="Enter username" required>
                     </div>
                     
                     <!-- Password -->
                     <div class="mb-3">
                         <label class="form-label fw-bold">Password</label>
-                        <input type="password" class="form-control" placeholder="Enter password" required>
+                        <input type="password" class="form-control" name="password"placeholder="Enter password" required>
                     </div>
                     
-                    <!-- Remember Me -->
-                    <div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="remember">
-                        <label class="form-check-label" for="remember">Remember me</label>
-                    </div>
                     
                     <!-- Login Button -->
                     <button type="submit" class="btn btn-dark w-100 py-2 fw-bold">
                         <i class="fas fa-sign-in-alt me-2"></i>LOGIN
                     </button>
-                    
-                    <!-- Forgot Password -->
-                    <!-- <div class="text-center mt-3">
-                        <a href="#" class="text-decoration-none text-dark">Forgot password?</a>
-                    </div> -->
                 </form>
             </div>
         </div>
