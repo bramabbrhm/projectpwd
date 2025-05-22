@@ -28,34 +28,24 @@
             </div>
             
             <div class="card-body p-4">
-                <form>
+                <form action="" method="POST">
                     <!-- Username -->
                     <div class="mb-3">
                         <label class="form-label fw-bold">Username</label>
-                        <input type="text" class="form-control" placeholder="Enter username" required>
+                        <input type="text" class="form-control" name="username" placeholder="Enter username" required>
                     </div>
                     
                     <!-- Password -->
                     <div class="mb-3">
                         <label class="form-label fw-bold">Password</label>
-                        <input type="password" class="form-control" placeholder="Enter password" required>
+                        <input type="password" class="form-control" name="password"placeholder="Enter password" required>
                     </div>
                     
-                    <!-- Remember Me -->
-                    <div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="remember">
-                        <label class="form-check-label" for="remember">Remember me</label>
-                    </div>
                     
                     <!-- Login Button -->
                     <button type="submit" class="btn btn-dark w-100 py-2 fw-bold">
                         <i class="fas fa-sign-in-alt me-2"></i>LOGIN
                     </button>
-                    
-                    <!-- Forgot Password -->
-                    <!-- <div class="text-center mt-3">
-                        <a href="#" class="text-decoration-none text-dark">Forgot password?</a>
-                    </div> -->
                 </form>
             </div>
         </div>
@@ -67,5 +57,36 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+    <!-- titip -->
+     <div class="form-container">
+                <form id="welcomeForm" action="" method="POST">
+                    <div class="mb-4">
+                        <label for="name" class="form-label">Masukkan Nama Anda</label>
+                        <input type="text" class="form-control form-control-lg" id="name" name="name" required placeholder="Nama">
+                    </div>
+                    <div class="mb-4">
+                        <label for="tableNumber" class="form-label">Masukkan Nomor Meja anda</label>
+                        <select class="form-select form-select-lg" id="tableNumber" name="no_meja" required>
+                            <option value="" selected disabled>Pilih disini</option>
+                            <option value="1">1</option>
+                            <option value="2"> 2</option>
+                            <option value="3"> 3</option>
+                            <option value="4"> 4</option>
+                            <option value="5"> 5</option>
+                            <option value="6"> 6</option>
+                            <option value="7"> 7</option>
+                            <option value="8"> 8</option>
+                            <option value="9"> 9</option>
+                            <option value="10"> 10</option>
+                        </select>
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="p-3 mb-0 bg-dark text-white position-relative"
+                        style="background-color: #212529;">View Menu</button>
+                    </div>
+                </form>
 </body>
 </html>
