@@ -49,9 +49,9 @@
     <div class="d-flex align-items-center gap-4">
       <!-- Navigation Links -->
       <div class="d-none d-md-flex gap-4">
-        <a href="#" class="text-white fw-bold text-decoration-none hover-gold">HOME</a>
-        <a href="#" class="text-white fw-bold text-decoration-none hover-gold">MENU</a>
-        <a href="#" class="text-white fw-bold text-decoration-none hover-gold">ABOUT</a>
+        <a href="index.php" class="text-white fw-bold text-decoration-none hover-gold">HOME</a>
+        <a href="indexmenu.php" class="text-white fw-bold text-decoration-none hover-gold">MENU</a>
+        <a href="indexabout.php" class="text-white fw-bold text-decoration-none hover-gold">ABOUT</a>
       </div>
       
       <!-- Tombol ORDER dengan efek -->
