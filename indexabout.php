@@ -85,7 +85,7 @@
           <i class="fas fa-coffee me-2"></i>TENTANG BOERJO
         </h5>
         <p class="mb-0">
-          Berdiri sejak tahun 2010, menjadikan Boerjo menjadi salah satu pelopor warung makan di kota ini. Dengan dedikasi tinggi , kami berkomitmen untuk menyajikan makanan yang lezat dan berkualitas
+          Merupakan salah satu pelopor warung makan di kota ini, yang terus berkomitmen untuk menyajikan makanan yang lezat dan berkualitas serta menjaga eksistensinya dengan inovasi inovasi baru.
         </p>
       </div>
 
