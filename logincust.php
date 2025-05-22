@@ -24,19 +24,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Login - BoerJo</title>
+    <title>Login Customer - BoerJo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="bg-light">
     <!-- Navbar -->
-    <nav class="p-3 bg-dark text-white">
-        <div class="container-fluid d-flex justify-content-between align-items-center">
-            <a class="navbar-brand fs-1 fw-bolder">
-                <span class="text-warning">B</span>oer<span class="text-warning">J</span>o
-            </a>
-        </div>
-    </nav>
+    <nav class="p-3 mb-0 bg-dark text-white position-relative">
+  <!-- Overlay dan background gambar kopi -->
+  
+  <div class="container-fluid d-flex justify-content-between align-items-center">
+    <!-- Logo dengan efek spesial -->
+    <a class="navbar-brand" style="
+      font-size: 40px;
+      font-weight: 800;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      letter-spacing: 1px;
+    ">
+      <span style="color: #FFD700;">B</span>oer<span style="color: #FFD700;">J</span>o
+    </a>
+    
+    <!-- Nav Items -->
+    <div class="d-flex align-items-center gap-4">
+      <!-- Navigation Links -->
+      <div class="d-none d-md-flex gap-4">
+        <a href="index.php" class="text-white fw-bold text-decoration-none hover-gold">HOME</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<style>
+  .hover-gold:hover {
+    color: #FFD700 !important;
+    transform: translateY(-2px);
+    transition: all 0.3s;
+  }
+</style>
+
 
     <!-- Login Form -->
     <div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
