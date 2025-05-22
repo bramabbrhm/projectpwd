@@ -67,7 +67,7 @@
                     
                     
                     <!-- Login Button -->
-                    <button type="submit" class="btn btn-dark w-100 py-2 fw-bold">
+                    <a href="index.php" ><button type="submit" class="btn btn-dark w-100 py-2 fw-bold">
                         <i class="fas fa-sign-in-alt me-2"></i>LOGIN
                     </button>
                 </form>
@@ -80,4 +80,4 @@
         <small>&copy; 2023 BoerJo | Warung Gacor</small>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script></a>
