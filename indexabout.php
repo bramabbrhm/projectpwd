@@ -54,8 +54,8 @@
   <div style="max-width: 800px; margin: auto; text-align: center;">
     <h2 style="font-size: 2rem; margin-bottom: 1rem;">Tentang Waroeng Boerjo</h2>
     <p style="font-size: 1.1rem; line-height: 1.8;">
-      <strong>Waroeng Boerjo</strong> didirikan pada tahun <strong>2000</strong>, berawal dari sebuah warung kecil di pinggir jalan yang menyajikan menu sederhana namun penuh rasa. 
-      Dengan semangat menyajikan makanan yang <em>murah, merakyat, dan mengenyangkan</em>, kami berkomitmen untuk menjadi pilihan favorit masyarakat dari berbagai kalangan.
+      <strong>Waroeng Boerjo</strong> Berdiri sejak tahun <strong>2000</strong>merupakan salah satu pelopor warung makan di kota ini, berawal dari sebuah warung kecil di pinggir jalan yang menyajikan menu sederhana namun penuh cita rasa yang nyaman. 
+      Dengan semangat menyajikan makanan yang <em>murah, merakyat, dan mengenyangkan</em>, kami berkomitmen untuk menjadi pilihan favorit masyarakat dari berbagai kalangan. Tak hanya itu, kami juga berkomitmen untuk selalu menjaga eksistensi dan juga inovasi inovasi agar tak lekang oleh waktu.
     </p>
     
     <p style="font-size: 1.1rem; line-height: 1.8; margin-top: 1.5rem;">
