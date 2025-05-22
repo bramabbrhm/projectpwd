@@ -59,7 +59,7 @@
     </p>
     
     <p style="font-size: 1.1rem; line-height: 1.8; margin-top: 1.5rem;">
-      Selama lebih dari 20 tahun, Waroeng Boerjo terus berkembang tanpa meninggalkan cita rasa khas warung burjo yang melegenda — mulai dari <strong>nasi goreng</strong>, <strong>mie rebus</strong>, <strong>magelangan</strong>, hingga segelas <strong>burjo hangat</strong> yang menemani obrolan malam.
+      Selama lebih dari <strong> 20 tahun</strong>, Waroeng Boerjo terus berkembang tanpa meninggalkan cita rasa khas warung burjo yang selama ini di kenal oleh masyrakat. Berkomitmen untuk menjaga kepercayaan masyarakat hingga menyediakan tempat yang nyaman untuk para pelanggan kesayangan kami.
     </p>
 
     <!-- Gambar -->
