@@ -112,6 +112,8 @@
           Warung makan legendaris sejak 1996, menghadirkan berbagai hidangan berkualitas
           dengan bahan pilihan langsung dari petani lokal.
         </p>
+        <br><br>
+        <a href="Login_admin.php" class="text-white fw-bold text-decoration-none hover-gold">login admin</a>
       </div>
 
       <!-- Jam Operasional -->
