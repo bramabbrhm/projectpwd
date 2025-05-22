@@ -6,28 +6,31 @@
     <title>BoerJoe - Welcome</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../Project/css/styling.css">
+  <link rel="stylesheet" href="../projectpwd/css/styling.css">
     <style>
-/* ppp */
+        .test{
+
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="card welcome-card">
             <div class="welcome-header">
-                <div class="brand-logo" style="font-family: 'Pacifico', cursive;">BoerJoe</div>
+                <div class="brand-logo"> 
+                    <span style="color: #FFD700;">B</span>oer<span style="color: #FFD700;">J</span>o
+                </div>
                 <p></p>
-                <!-- ppp -->
             </div>
             <div class="form-container">
-                <form id="welcomeForm" action="menu.php" method="get">
+                <form id="welcomeForm" action="" method="POST">
                     <div class="mb-4">
                         <label for="name" class="form-label">Masukkan Nama Anda</label>
-                        <input type="text" class="form-control form-control-lg" id="name" name="name" required placeholder="User">
+                        <input type="text" class="form-control form-control-lg" id="name" name="name" required placeholder="Nama">
                     </div>
                     <div class="mb-4">
-                        <label for="tableNumber" class="form-label">Password</label>
-                        <select class="form-select form-select-lg" id="tableNumber" name="tableNumber" required>
+                        <label for="tableNumber" class="form-label">Masukkan Nomor Meja anda</label>
+                        <select class="form-select form-select-lg" id="tableNumber" name="no_meja" required>
                             <option value="" selected disabled>Pilih disini</option>
                             <option value="1">1</option>
                             <option value="2"> 2</option>
@@ -42,7 +45,8 @@
                         </select>
                     </div>
                     <div class="d-grid">
-                        <button type="submit" class="btn btn-success btn-lg">View Menu</button>
+                        <button type="submit" class="p-3 mb-0 bg-dark text-white position-relative"
+                        style="background-color: #212529;">View Menu</button>
                     </div>
                 </form>
             </div>
@@ -52,5 +56,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 </body>
 </html>
