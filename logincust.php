@@ -1,24 +1,34 @@
 <?php
-    // if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // include "koneksi.php";
-    
-    // $nama_pelanggan = $_POST['nama_pelanggan'];
-    // $no_meja = $_POST['no_meja'];
-    // // $result = mysqli_query($connect, "SELECT no_pesanan FROM pesanan WHERE no_meja = '$no_meja'");
-    // // if (mysqli_num_rows($result) > 0) {
-    // //     $no_meja_error = "Mohon maaf meja ini sudah ditempati";
-    // // }
-    
-    // $query = mysqli_query($connect, "INSERT INTO pesanan VALUES ('','','$no_meja','$nama_pelanggan','','','')")
-    // or die(mysqli_error($connect));
-    // if ($query) {
-    //     header("Location: landing.php");
-    //     exit;
-    // } else {
-    //     echo "<script>alert('Registration Failed');</script>";
-    // }
-    // }  
+session_start();
+include "koneksi.php";
+
+if (isset($_SESSION['no_pesanan'])) {
+    header("Location: pemesanan.php");
+    exit();
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $nama_pelanggan = mysqli_real_escape_string($connect, $_POST['nama_pelanggan']);
+    $no_meja = (int) $_POST['no_meja'];
+
+    // Default values
+    $no_telp = 0; // Ubah jika ingin menambahkan input nomor telepon
+    $total_harga = 0;
+    $status_pesanan = 0;
+
+    $query = "INSERT INTO pesanan (waktu_pesan, no_meja, nama_pelanggan, no_telp, total_harga, status_pesanan)
+              VALUES (NOW(), $no_meja, '$nama_pelanggan', $no_telp, $total_harga, $status_pesanan)";
+
+    if (mysqli_query($connect, $query)) {
+        $_SESSION['no_pesanan'] = mysqli_insert_id($connect); // Set session
+        header("Location: pemesanan.php");
+        exit;
+    } else {
+        echo "<script>alert('Input gagal: " . mysqli_error($connect) . "');</script>";
+    }
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

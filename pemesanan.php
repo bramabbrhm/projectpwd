@@ -1,3 +1,27 @@
+<?php
+session_start();
+include "koneksi.php";
+
+// Check if user is logged in
+if (!isset($_SESSION['no_pesanan'])) {
+    header("Location: logincust.php?pesan=belum-login");
+    exit();
+}
+$menus = mysqli_query($connect, "SELECT * FROM menu WHERE status_stok = 1");
+// Get order details
+$no_pesanan = $_SESSION['no_pesanan'];
+$order_query = mysqli_query($connect, 
+    "SELECT * FROM pesanan WHERE no_pesanan = $no_pesanan");
+$order = mysqli_fetch_assoc($order_query);
+
+// Get ordered items
+$items_query = mysqli_query($connect,
+    "SELECT m.nama, m.harga, j.kuantitas, j.subtotal 
+     FROM jml_pesanan j
+     JOIN menu m ON j.id_menu = m.id_menu
+     WHERE j.no_pesanan = $no_pesanan");
+     ?>
+ 
 <!DOCTYPE html>
 <html lang="id">
 <head>
