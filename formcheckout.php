@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Charlotte's Bag</title>
+  <title>Check out!</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
@@ -31,7 +31,7 @@
       flex: 2;
     }
 
-    .summary {
+    .inputdata {
       flex: 1;
     }
 
@@ -67,7 +67,7 @@
     }
 
     .checkout-btn {
-      background-color: #3b0a2a;
+      background-color: #E31837;
       color: white;
       padding: 12px;
       text-align: center;
@@ -85,25 +85,16 @@
       border-left: 4px solid #e09e6d;
     }
 
-    .free-delivery {
-      background-color: #e6f9ec;
-      padding: 10px;
-      font-size: 14px;
-      color: #1a7f4f;
-      border-left: 4px solid #1a7f4f;
-      margin-bottom: 10px;
-    }
-
     .subtotal {
       font-size: 16px;
       margin-top: 10px;
     }
 
-    .promo, .giftcard {
+    .inputdata, .giftcard {
       margin: 15px 0;
     }
 
-    .promo input {
+    .inputdata input {
       width: 100%;
       padding: 8px;
       margin-top: 5px;
@@ -120,7 +111,7 @@
 <body>
   <div class="container">
     <div class="bag">
-      <h2>YOUR BAG</h2>
+      <h2>Keranjang Anda</h2>
 
       <div class="item">
         <img src="https://www.charlottetilbury.com/media/catalog/product/b/e/beauty_light_wand_peachgasm.png" alt="Beauty Light Wand">
@@ -147,13 +138,13 @@
       </div>
     </div>
 
-    <div class="summary">
+    <div class="inputdata ">
       <div class="promo">
         <label>Maukan Nama Anda</label>
-        <input type="text" placeholder="Masukan Nama Anda">
+        <input type="text" placeholder="Nama">
         <br><br>
         <label>Masukan Nomor Telefon Anda</label>
-        <input type="text" placeholder="Masukan Nomor Telefon Anda">
+        <input type="text" placeholder="Nomor Telefon">
       </div>
 
       <div class="giftcard">
