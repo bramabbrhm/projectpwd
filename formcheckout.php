@@ -120,8 +120,6 @@
 <body>
   <div class="container">
     <div class="bag">
-      <div class="note">Darling you’ve redeemed Charlotte’s free gifts! ✨</div>
-      <div class="free-delivery">Enjoy <strong>free delivery</strong> on this order</div>
       <h2>YOUR BAG</h2>
 
       <div class="item">
@@ -151,27 +149,24 @@
 
     <div class="summary">
       <div class="promo">
-        <label>Apply a promo code</label>
-        <input type="text" placeholder="Enter your promo code here">
+        <label>Maukan Nama Anda</label>
+        <input type="text" placeholder="Masukan Nama Anda">
+        <br><br>
+        <label>Masukan Nomor Telefon Anda</label>
+        <input type="text" placeholder="Masukan Nomor Telefon Anda">
       </div>
 
       <div class="giftcard">
-        <label>Apply a gift card</label>
+        <label>*masukan form untuk melanjutkan pesanan anda</label>
       </div>
 
       <div class="subtotal">
-        SUBTOTAL (5 ITEMS): <strong>$230.00</strong><br>
-        TAX CALCULATED AT CHECKOUT<br><br>
+        Total : <strong>$230.00</strong><br>
+        <br><br>
         TOTAL: <strong>$230.00</strong>
       </div>
 
       <div class="checkout-btn">CHECKOUT | $230.00</div>
-
-      <div class="sample-info">
-        2 FREE SAMPLES with every order!<br>
-        Choose 2 free samples at checkout!<br>
-        Including Charlotte's Fragrance, Skincare & Makeup!
-      </div>
     </div>
   </div>
 </body>
