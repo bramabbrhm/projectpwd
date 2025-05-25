@@ -1,3 +1,30 @@
+<?php
+// session_start();
+// include "koneksi.php";
+
+//
+// if (isset($_SESSION['admin'])) {
+//     header("Location: dashboard.php");
+//     exit();
+// }
+
+// 
+// if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+//     $username = mysqli_real_escape_string($connect, $_POST['username']);
+//     $password = mysqli_real_escape_string($connect, $_POST['password']);
+
+//     $query = mysqli_query($connect, "SELECT * FROM admin WHERE username='$username' AND password='$password'");
+//     if (mysqli_num_rows($query) > 0) {
+//         $_SESSION['admin'] = $username;
+//         header("Location: dashboard.php");
+//         exit();
+//     } else {
+//         header("Location: loginadmin.php?pesan=gagal");
+//         exit();
+//     }
+// }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
