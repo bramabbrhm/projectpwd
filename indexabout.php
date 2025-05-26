@@ -54,7 +54,7 @@
   <div style="max-width: 800px; margin: auto; text-align: center;">
     <h2 style="font-size: 2rem; margin-bottom: 1rem;">Tentang Waroeng Boerjo</h2>
     <p style="font-size: 1.1rem; line-height: 1.8;">
-      <strong>Waroeng Boerjo</strong> Berdiri sejak tahun <strong>2000</strong>merupakan salah satu pelopor warung makan di kota ini, berawal dari sebuah warung kecil di pinggir jalan yang menyajikan menu sederhana namun penuh cita rasa yang nyaman. 
+      <strong>Waroeng Boerjo</strong> Berdiri sejak tahun <strong>2000</strong> merupakan salah satu pelopor warung makan di kota ini, berawal dari sebuah warung kecil di pinggir jalan yang menyajikan menu sederhana namun penuh cita rasa yang nyaman. 
       Dengan semangat menyajikan makanan yang <em>murah, merakyat, dan mengenyangkan</em>, kami berkomitmen untuk menjadi pilihan favorit masyarakat dari berbagai kalangan. Tak hanya itu, kami juga berkomitmen untuk selalu menjaga eksistensi dan juga inovasi inovasi agar tak lekang oleh waktu.
     </p>
     
@@ -63,16 +63,13 @@
     </p>
 
     <!-- Gambar -->
-   
-  </div>
-</section>
- <img src="../projectpwd/asset_index/about1.png" 
+   <img src="../projectpwd/asset_index/about1.png" 
          alt="Foto Waroeng Boerjo" 
          style="width: 100%; max-width: 800px; height: auto; margin-top: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
 
-
-
-
+  </div>
+</section>
+ 
 
 
 <!-- batasnya sampe sini -->
@@ -82,7 +79,7 @@
       <!-- Tentang Kami -->
       <div class="col-md-6 mb-4 mb-md-0">
         <h5 class="fw-bold mb-3">
-          <i class="fas fa-coffee me-2"></i>TENTANG BOERJO
+          <i class="fas fa-coffee me-2"></i>WAROENG BOERJO
         </h5>
         <p class="mb-0">
           Merupakan salah satu pelopor warung makan sejak tahun 2000 di kota ini, yang terus berkomitmen untuk menyajikan makanan yang lezat dan berkualitas serta menjaga eksistensinya dengan inovasi inovasi baru.

@@ -106,14 +106,13 @@
       <!-- Tentang Kami -->
       <div class="col-md-6 mb-4 mb-md-0">
         <h5 class="fw-bold mb-3">
-          <i class="fas fa-coffee me-2"></i>TENTANG BOERJO
+          <i class="fas fa-coffee me-2"></i>WAROENG BOERJO
         </h5>
         <p class="mb-0">
-          Warung makan legendaris sejak 1996, menghadirkan berbagai hidangan berkualitas
-          dengan bahan pilihan langsung dari petani lokal.
+         Jangan lupakan kami!
         </p>
         <br><br>
-        <a href="Login_admin.php" class="text-white fw-bold text-decoration-none hover-gold">login admin</a>
+        <a href="loginadmin.php" class="text-white fw-bold text-decoration-none hover-gold">login admin</a>
       </div>
 
       <!-- Jam Operasional -->
