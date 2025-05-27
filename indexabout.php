@@ -31,6 +31,9 @@
         <a href="indexabout.php" class="text-white fw-bold text-decoration-none hover-gold">ABOUT</a>
       </div>
       <!-- Tombol ORDER dengan efek -->
+              <a href="antrian_pesanan.php" class="btn btn-outline-success fw-bold px-4 py-2">
+  <i class="fas fa-clock me-2"></i>Antrian
+</a>
       <a href="logincust.php" class="btn btn-danger fw-bold px-4 py-2" 
    style="background: #E31837; border: none; box-shadow: 0 4px 8px rgba(0,0,0,0.2); transition: all 0.3s;">
    <i class="fas fa-shopping-cart me-2"></i>ORDER NOW
@@ -114,7 +117,7 @@
     <!-- Copyright -->
     <div class="text-center pt-2">
       <small>
-        &copy; 2023 BoerJo | 
+        &copy; 2025 BoerJo | 
         <a href="#" class="text-white text-decoration-none">Warung Gacor</a>
       </small>
     </div>

@@ -8,25 +8,27 @@ if (isset($_SESSION['no_pesanan'])) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $nama_pelanggan = mysqli_real_escape_string($connect, $_POST['nama_pelanggan']);
     $no_meja = (int) $_POST['no_meja'];
 
-    // Default values
-    $no_telp = 0; // Ubah jika ingin menambahkan input nomor telepon
+    $nama_pelanggan = '';
+    $no_telp = 0; 
     $total_harga = 0;
-    $status_pesanan = 0;
 
-    $query = "INSERT INTO pesanan (waktu_pesan, no_meja, nama_pelanggan, no_telp, total_harga, status_pesanan)
-              VALUES (NOW(), $no_meja, '$nama_pelanggan', $no_telp, $total_harga, $status_pesanan)";
+
+    $query = "INSERT INTO pesanan (waktu_pesan, no_meja, nama_pelanggan, no_telp, total_harga)
+              VALUES (NOW(), $no_meja, '$nama_pelanggan', $no_telp, $total_harga)";
 
     if (mysqli_query($connect, $query)) {
-        $_SESSION['no_pesanan'] = mysqli_insert_id($connect); // Set session
+        $_SESSION['no_pesanan'] = mysqli_insert_id($connect); 
         header("Location: pemesanan.php");
         exit;
     } else {
         echo "<script>alert('Input gagal: " . mysqli_error($connect) . "');</script>";
     }
 }
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -39,12 +41,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="bg-light">
-    <!-- Navbar -->
+
     <nav class="p-3 mb-0 bg-dark text-white position-relative">
-  <!-- Overlay dan background gambar kopi -->
+
   
   <div class="container-fluid d-flex justify-content-between align-items-center">
-    <!-- Logo dengan efek spesial -->
+  
     <a class="navbar-brand" style="
       font-size: 40px;
       font-weight: 800;
@@ -54,9 +56,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <span style="color: #FFD700;">B</span>oer<span style="color: #FFD700;">J</span>o
     </a>
     
-    <!-- Nav Items -->
+
     <div class="d-flex align-items-center gap-4">
-      <!-- Navigation Links -->
+   
       <div class="d-none d-md-flex gap-4">
         <a href="index.php" class="text-white fw-bold text-decoration-none hover-gold">HOME</a>
       </div>
@@ -71,11 +73,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   }
 </style>
 
-
-    <!-- Login Form -->
+  
     <div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
         <div class="card border-0 shadow" style="width: 100%; max-width: 400px;">
-            <!-- Header dengan gaya BoerJo -->
+      
             <div class="card-header bg-dark text-white text-center py-3">
                 <h4 class="mb-0 fs-3 fw-bolder">
                     <span class="text-warning">B</span>oer<span class="text-warning">J</span>o
@@ -84,13 +85,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             
             <div class="card-body p-4">
                 <form action="" method="POST">
-                    <!-- Username -->
-                    <div class="mb-3">
-                        <label for="name" class="form-label fw-bold">Masukkan Nama Anda</label>
-                        <input type="text" class="form-control " id="name" name="name" required placeholder="Nama">
-                    </div>
                     
-                    <!-- Mejah -->
+              
                     <div class="mb-3">
                         <label for="tableNumber" class="form-label fw-bold">Masukkan Nomor Meja anda</label>
                         <select class="form-select " id="tableNumber" name="no_meja" required>
@@ -121,9 +117,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-3">
-        <small>&copy; 2023 BoerJo | Warung Gacor</small>
+        <small>&copy; 2025 BoerJo | Warung Gacor</small>
     </footer>
 
+    <?php
+        if(isset($_GET['pesan'])) {
+        if ($_GET['pesan'] == "gagal") {
+            echo "<p>Input nomor meja gagal!</p>";
+        }else if ($_GET['pesan'] == "logout") {
+            echo "<p> Sukses</p>";
+        } else if ($_GET['pesan'] == "belum-login") {
+            echo "<p>Silahkan memasukkan nomor meja terlebih dahulu</p>";
+        }
+    }
+    ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

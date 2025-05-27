@@ -3,7 +3,7 @@ session_start();
 include "koneksi.php";
 
 if (!isset($_SESSION['admin'])) {
-    header("Location:loginadm.php?pesan=belum-login");
+    header("Location:loginadmin.php?pesan=belum-login");
     exit();
 }
 
@@ -46,7 +46,10 @@ $result = mysqli_query($connect, "SELECT * FROM menu");
 <div class="container">
     <div class="d-flex justify-content-between align-items-center mb-3">
         <h2 class="fw-bold">Manajemen Menu</h2>
-        <a href="tambah_menu.php" class="btn btn-success fw-bold px-4"><i class="fas fa-plus me-2"></i>Tambah Menu</a>
+        <div>
+            <a href="tambah_menu.php" class="btn btn-success fw-bold px-4 me-2"><i class="fas fa-plus me-2"></i>Tambah Menu</a>
+            <a href="dashboard.php" class="btn btn-secondary fw-bold px-4 me-2"><i class="fas fa-arrow-left me-2"></i>Kembali</a>
+        </div>
     </div>
 
     <div class="table-responsive">
@@ -84,10 +87,13 @@ $result = mysqli_query($connect, "SELECT * FROM menu");
     </div>
 </div>
 
-<!-- Footer agar konsisten -->
+
 <footer class="bg-dark text-white mt-5 py-3">
   <div class="text-center">
-    <small>&copy; 2023 BoerJo Admin Dashboard</small>
+       <small>
+        &copy; 2025 BoerJo | 
+        <a href="#" class="text-white text-decoration-none">Warung Gacor</a>
+      </small>
   </div>
 </footer>
 

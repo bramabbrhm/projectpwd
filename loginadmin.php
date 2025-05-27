@@ -37,10 +37,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body class="bg-light">
     <!-- Navbar -->
     <nav class="p-3 mb-0 bg-dark text-white position-relative">
-  <!-- Overlay dan background gambar kopi -->
+ 
   
   <div class="container-fluid d-flex justify-content-between align-items-center">
-    <!-- Logo dengan efek spesial -->
+   
     <a class="navbar-brand" style="
       font-size: 40px;
       font-weight: 800;
@@ -50,9 +50,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <span style="color: #FFD700;">B</span>oer<span style="color: #FFD700;">J</span>o
     </a>
     
-    <!-- Nav Items -->
+
     <div class="d-flex align-items-center gap-4">
-      <!-- Navigation Links -->
+    
       <div class="d-none d-md-flex gap-4">
         <a href="index.php" class="text-white fw-bold text-decoration-none hover-gold">HOME</a>
       </div>
@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <!-- Login Form -->
     <div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
         <div class="card border-0 shadow" style="width: 100%; max-width: 400px;">
-            <!-- Header dengan gaya BoerJo -->
+         
             <div class="card-header bg-dark text-white text-center py-3">
                 <h4 class="mb-0 fs-3 fw-bolder">
                     <span class="text-warning">B</span>oer<span class="text-warning">J</span>o
@@ -104,7 +104,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-3">
-        <small>&copy; 2023 BoerJo | Warung Gacor</small>
+        <small>&copy; 2025 BoerJo | Warung Gacor</small>
     </footer>
+        <?php
+    if(isset($_GET['pesan'])) {
+        if ($_GET['pesan'] == "gagal") {
+            echo "<p>Login gagal!</p>";
+        }else if ($_GET['pesan'] == "logout") {
+            echo "<p>Log out Sukses</p>";
+        } else if ($_GET['pesan'] == "belum-login") {
+            echo "<p>Silahkan login terlebih dahulu</p>";
+        } else if ($_GET['pesan'] == "order-canceled"){
+            echo "<p> Pesanan berhasil dibatalkan!</p>";
+        }
+    }
+    ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script></a>
+
+  </body>
