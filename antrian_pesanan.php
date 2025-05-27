@@ -1,14 +1,38 @@
+<?php
+include "koneksi.php";
+$pesanan = mysqli_query($connect, 
+    "SELECT waktu_pesan, nama_pelanggan, no_meja, status_pesanan FROM pesanan ORDER BY waktu_pesan DESC");
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - BoerJo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <title>Status Pesanan - BoerJo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .badge-waiting {
+            background-color: #ffc107;
+            color: #000;
+        }
+        .badge-processed {
+            background-color: #0dcaf0;
+        }
+        .badge-finished {
+            background-color: #198754;
+        }
+        .badge-cancelled {
+            background-color: #dc3545;
+        }
+    </style>
 </head>
 <body>
-<nav class="p-3 mb-0 bg-dark text-white position-relative">
+    <nav class="p-3 mb-0 bg-dark text-white position-relative">
   
 
   
@@ -32,10 +56,7 @@
       </div>
       
       <!-- Tombol pesan -->
-       <a href="antrian_pesanan.php" class="btn btn-outline-success fw-bold px-4 py-2">
-  <i class="fas fa-clock me-2"></i>Antrian
-</a>
-      <a href="logincust.php" class="btn btn-danger fw-bold px-4 py-2" 
+       <a href="logincust.php" class="btn btn-danger fw-bold px-4 py-2" 
    style="background: #E31837; border: none; box-shadow: 0 4px 8px rgba(0,0,0,0.2); transition: all 0.3s;">
    <i class="fas fa-shopping-cart me-2"></i>ORDER NOW
 </a>
@@ -50,60 +71,41 @@
     transition: all 0.3s;
   }
 </style>
+    <div class="container py-5">
+        <h2 class="fw-bold mb-4">Daftar Status Pesanan</h2>
 
-<div id="menuSlider" class="carousel slide" data-bs-ride="carousel">
- 
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#menuSlider" data-bs-slide-to="0" class="active"></button>
-    <button type="button" data-bs-target="#menuSlider" data-bs-slide-to="1"></button>
-    <button type="button" data-bs-target="#menuSlider" data-bs-slide-to="2"></button>
-  </div>
-
-  <!-- Slide Carousel -->
-  <div class="carousel-inner">
-    <!-- Slide 1 -->
-    <div class="carousel-item active">
-      <img src="asset_index/Best Seller.png" class="d-block w-100" alt="Bubur Kacang Ijo">
-      <div class="carousel-caption d-none d-md-block">
-        <!-- <h5>Bubur Kacang Ijo Special</h5>
-        <p>Rp 12.000</p> -->
-      </div>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead class="table-dark text-center">
+                    <tr>
+                        <th>Waktu Pesan</th>
+                        <th>Nama Pelanggan</th>
+                        <th>No. Meja</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php while ($row = mysqli_fetch_assoc($pesanan)) : ?>
+                    <tr>
+                        <td><?= date('d M Y H:i', strtotime($row['waktu_pesan'])) ?></td>
+                        <td><?= htmlspecialchars($row['nama_pelanggan']) ?></td>
+                        <td class="text-center"><?= $row['no_meja'] ?></td>
+                        <td class="text-center">
+                            <span class="badge 
+                                <?= $row['status_pesanan'] == 'Selesai' ? 'badge-finished' : 
+                                   ($row['status_pesanan'] == 'Diproses' ? 'badge-processed' : 
+                                   ($row['status_pesanan'] == 'Dibatalkan' ? 'badge-cancelled' : 'badge-waiting')) ?>">
+                                <?= $row['status_pesanan'] ?: 'Menunggu' ?>
+                            </span>
+                        </td>
+                    </tr>
+                    <?php endwhile; ?>
+                </tbody>
+            </table>
+        </div>
     </div>
-    
-    <!-- Slide 2 -->
-    <div class="carousel-item">
-      <img src="asset_index/www.boerjo.com.png" class="d-block w-100" alt="Bubur Sumsum">
-      <div class="carousel-caption d-none d-md-block">
-        <!-- <h5>Bubur Sumsum Pandan</h5>
-        <p>Rp 10.000</p> -->
-      </div>
-    </div>
-    
-    <!-- Slide 3 -->
-    <div class="carousel-item">
-      <img src="asset_index/NASI GOWENG.png" class="d-block w-100" alt="Es Teh">
-      <div class="carousel-caption d-none d-md-block">
-        <!-- <h5>Es Teh Manis</h5>
-        <p>Rp 5.000</p> -->
-      </div>
-    </div>
-  </div>
 
-  <!-- Tombol next carousel -->
-  <button class="carousel-control-prev" type="button" data-bs-target="#menuSlider" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#menuSlider" data-bs-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </button>
-</div>
-
-
-<!-- kalo mau tambahin konten disini, sebelum footer -->
-
-
-<!-- Footer  -->
-<footer class="bg-dark text-white py-4">
+    <footer class="bg-dark text-white py-4">
   <div class="container">
     <div class="row">
       <!-- Tentang Kami -->
@@ -115,7 +117,7 @@
          Warung makan legendaris sejak 1996, menghadirkan berbagai hidangan berkualitas dengan bahan pilihan langsung dari petani lokal.
         </p>
         <br><br>
-        <a href="loginadmin.php" class="text-white fw-bold text-decoration-none hover-gold">login admin</a>
+
       </div>
 
       <!-- Jam Operasional -->
@@ -153,11 +155,6 @@
   </div>
 </footer>
 
-<!-- Font Awesome untuk ikon -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

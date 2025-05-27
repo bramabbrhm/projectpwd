@@ -7,9 +7,6 @@
     width: max-content; /* Prevents text squeezing */
     
   }
-  .navbar-nav {
-    font-family: 'Segoe UI', Tahoma, sans-serif;
-  }
 
 .carousel-item {
     height: 90vh; 
@@ -114,3 +111,9 @@
     .navbar-nav {
       font-family: 'Roboto', sans-serif; /* Clean body font */
     }
+
+      .hover-gold:hover {
+    color: #FFD700 !important;
+    transform: translateY(-2px);
+    transition: all 0.3s;
+      }

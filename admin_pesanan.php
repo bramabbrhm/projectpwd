@@ -3,11 +3,11 @@ session_start();
 include "koneksi.php";
 
 if (!isset($_SESSION['admin'])) {
-    header("Location: loginadm.php?pesan=belum-login");
+    header("Location: loginadmin.php?pesan=belum-login");
     exit();
 }
 
-// Handle status updates
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update_status'])) {
     $no_pesanan = $_POST['no_pesanan'];
     $status_pesanan = $_POST['status_pesanan'];
@@ -20,12 +20,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update_status'])) {
          WHERE no_pesanan = $no_pesanan");
 }
 
-// Get all orders
-$orders = mysqli_query($connect, 
+
+$pesanan = mysqli_query($connect, 
     "SELECT * FROM pesanan ORDER BY waktu_pesan DESC");
 
-// Get order items function
-function getOrderItems($connect, $no_pesanan) {
+
+function ambilpesanan($connect, $no_pesanan) {
     $items = mysqli_query($connect,
         "SELECT m.nama, j.kuantitas, j.subtotal
          FROM jml_pesanan j
@@ -72,7 +72,6 @@ function getOrderItems($connect, $no_pesanan) {
 </head>
 <body>
 
-<!-- Navbar -->
 <nav class="p-3 mb-4 bg-dark text-white position-relative">
   <div class="container-fluid d-flex justify-content-between align-items-center">
     <a class="navbar-brand" style="font-size: 40px; font-weight: 800; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); letter-spacing: 1px;">
@@ -108,7 +107,7 @@ function getOrderItems($connect, $no_pesanan) {
                 </tr>
             </thead>
             <tbody>
-                <?php while ($order = mysqli_fetch_assoc($orders)) : ?>
+                <?php while ($order = mysqli_fetch_assoc($pesanan)) : ?>
                 <tr>
                     <td class="text-center"><?= $order['no_pesanan'] ?></td>
                     <td><?= date('d M Y H:i', strtotime($order['waktu_pesan'])) ?></td>
@@ -140,7 +139,7 @@ function getOrderItems($connect, $no_pesanan) {
                         </button>
                     </td>
                 </tr>
-                <!-- Order Details Row -->
+                <!-- Detail Pesanan  -->
                 <tr class="collapse" id="details-<?= $order['no_pesanan'] ?>">
                     <td colspan="9">
                         <div class="order-details">
@@ -155,7 +154,7 @@ function getOrderItems($connect, $no_pesanan) {
                                 </thead>
                                 <tbody>
                                     <?php 
-                                    $items = getOrderItems($connect, $order['no_pesanan']);
+                                    $items = ambilpesanan($connect, $order['no_pesanan']);
                                     while ($item = mysqli_fetch_assoc($items)) : ?>
                                     <tr>
                                         <td><?= $item['nama'] ?></td>
@@ -170,7 +169,6 @@ function getOrderItems($connect, $no_pesanan) {
                         </div>
                     </td>
                 </tr>
- <!-- Edit Modal -->
 <div class="modal fade" id="editModal-<?= $order['no_pesanan'] ?>" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -218,11 +216,12 @@ function getOrderItems($connect, $no_pesanan) {
     </div>
 </div>
 
-<!-- Footer -->
 <footer class="bg-dark text-white mt-5 py-3">
   <div class="text-center">
-    <small>&copy; 2023 BoerJo Admin Dashboard</small>
-  </div>
+      <small>
+        &copy; 2025 BoerJo | 
+        <a href="#" class="text-white text-decoration-none">Warung Gacor</a>
+      </small>  </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>

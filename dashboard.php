@@ -4,7 +4,7 @@ include "koneksi.php";
 
 // Cek login admin (misalnya pakai $_SESSION['admin'])
 if (!isset($_SESSION['admin'])) {
-    header("Location:loginadm.php?pesan=belum-login");
+    header("Location:loginadmin.php?pesan=belum-login");
     exit();
 }
 ?>
@@ -51,10 +51,9 @@ if (!isset($_SESSION['admin'])) {
     <div class="d-flex align-items-center gap-4">
       <div class="d-none d-md-flex gap-4">
       </div>
-      <a href="logoutadmin.php" class="btn btn-danger fw-bold px-4 py-2" 
-         style="background: #E31837; border: none; box-shadow: 0 4px 8px rgba(0,0,0,0.2); transition: all 0.3s;">
-         <i class="fas fa-sign-out-alt me-2"></i>LOGOUT
-      </a>
+                 <a href="logoutadmin.php" class="btn btn-outline-light">
+                    <i class="fas fa-sign-out-alt me-1"></i> Logout
+                </a>
     </div>
   </div>
 </nav>
@@ -78,7 +77,7 @@ if (!isset($_SESSION['admin'])) {
         <i class="fas fa-receipt fa-2x mb-3 text-warning"></i>
         <h5 class="fw-bold">Pesanan Masuk</h5>
         <p class="small text-muted">Lihat dan kelola pesanan yang masuk dari pelanggan.</p>
-        <a href="admin_order.php" class="btn btn-outline-warning btn-sm fw-bold mt-2">Lihat Pesanan</a>
+        <a href="admin_pesanan.php" class="btn btn-outline-warning btn-sm fw-bold mt-2">Lihat Pesanan</a>
       </div>
     </div>
 

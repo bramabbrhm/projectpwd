@@ -2,13 +2,13 @@
 session_start();
 include "koneksi.php";
 
-// Authentication check
+
 if (!isset($_SESSION['admin'])) {
-    header("Location: ../loginadmin.php");
+    header("Location: loginadmin.php");
     exit();
 }
 
-// Check if no_pesanan parameter exists
+
 if (!isset($_GET['no_pesanan']) || empty($_GET['no_pesanan'])) {
     header("Location: admin_datapelanggan.php?error=invalid_id");
     exit();
@@ -16,7 +16,7 @@ if (!isset($_GET['no_pesanan']) || empty($_GET['no_pesanan'])) {
 
 $no_pesanan = (int)$_GET['no_pesanan'];
 
-// Fetch customer data
+
 $query = "SELECT * FROM pesanan WHERE no_pesanan = ?";
 $stmt = mysqli_prepare($connect, $query);
 mysqli_stmt_bind_param($stmt, "i", $no_pesanan);
@@ -30,15 +30,15 @@ if (mysqli_num_rows($result) === 0) {
 
 $pesanan = mysqli_fetch_assoc($result);
 
-// Process form submission
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Get form data
+
     $nama_pelanggan = mysqli_real_escape_string($connect, $_POST['nama_pelanggan']);
     $no_telp = mysqli_real_escape_string($connect, $_POST['no_telp']);
     $no_meja = (int)$_POST['no_meja'];
     $status_pesanan = isset($_POST['status_pesanan']) ? 1 : 0;
 
-    // Update query with prepared statement
+
     $update_query = "UPDATE pesanan SET 
                     nama_pelanggan = ?, 
                     no_telp = ?, 
@@ -97,7 +97,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </style>
 </head>
 <body>
-    <!-- Navbar -->
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="dashboard.php" style="font-size: 1.8rem; font-weight: 800;">
@@ -114,7 +114,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </nav>
 
-    <!-- Main Content -->
+
     <main class="container py-4">
         <div class="form-container">
             <h1 class="mb-4 text-center"><i class="fas fa-user-edit me-2"></i>Edit Data Pelanggan</h1>
@@ -149,13 +149,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                            value="<?= htmlspecialchars($pesanan['no_meja']) ?>" required>
                 </div>
                 
-                <div class="form-check mb-4">
-                    <input class="form-check-input" type="checkbox" id="status_pesanan" name="status_pesanan" 
-                           <?= $pesanan['status_pesanan'] ? 'checked' : '' ?>>
-                    <label class="form-check-label" for="status_pesanan">
-                        Pesanan Selesai
-                    </label>
-                </div>
                 
                 <div class="d-flex justify-content-between">
                     <a href="admin_datapelanggan.php" class="btn btn-secondary px-4">
@@ -169,14 +162,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </main>
 
-    <!-- Footer -->
+
     <footer class="bg-dark text-white py-3 mt-auto">
         <div class="container text-center">
             <small>&copy; <?= date('Y') ?> BoerJo Admin Dashboard</small>
         </div>
     </footer>
 
-    <!-- Minimal Bootstrap JS (for navbar toggle if needed) -->
+ 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

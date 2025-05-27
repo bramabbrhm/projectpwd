@@ -2,7 +2,7 @@
 session_start();
 include "koneksi.php";
 if (!isset($_SESSION['admin'])) {
-    header("Location: ../loginadmin.php");
+    header("Location: loginadmin.php");
     exit();
 }
 
@@ -87,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <nav class="navbar navbar-dark bg-dark px-4">
     <a class="navbar-brand" href="dashboard.php">
-        <span>B</span>oer<span>J</span>o Admin
+        <span>B</span>oer<span>J</span>o
     </a>
     <div class="d-flex gap-3">
         <a href="dashboard.php" class="text-white text-decoration-none hover-gold">Dashboard</a>

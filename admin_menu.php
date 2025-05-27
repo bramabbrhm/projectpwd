@@ -3,7 +3,7 @@ session_start();
 include "koneksi.php";
 
 if (!isset($_SESSION['admin'])) {
-    header("Location:loginadm.php?pesan=belum-login");
+    header("Location:loginadmin.php?pesan=belum-login");
     exit();
 }
 
@@ -84,10 +84,13 @@ $result = mysqli_query($connect, "SELECT * FROM menu");
     </div>
 </div>
 
-<!-- Footer agar konsisten -->
+
 <footer class="bg-dark text-white mt-5 py-3">
   <div class="text-center">
-    <small>&copy; 2023 BoerJo Admin Dashboard</small>
+       <small>
+        &copy; 2025 BoerJo | 
+        <a href="#" class="text-white text-decoration-none">Warung Gacor</a>
+      </small>
   </div>
 </footer>
 

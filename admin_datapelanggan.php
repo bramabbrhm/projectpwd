@@ -4,7 +4,7 @@ include "koneksi.php";
 
 // Authentication check
 if (!isset($_SESSION['admin'])) {
-    header("Location: loginadm.php?pesan=belum-login");
+    header("Location: loginadmin.php?pesan=belum-login");
     exit();
 }
 
@@ -130,38 +130,27 @@ if (!$result) {
                                     <th>Nama Pelanggan</th>
                                     <th>No. Telepon</th>
                                     <th>Tanggal Pesan</th>
-                                    <th>Status</th>
                                     <th class="text-center">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
-                                $no = 1;
+
                                 while ($row = mysqli_fetch_assoc($result)) :
                                     $statusClass = $row['status_pesanan'] ? 'badge-available' : 'badge-unavailable';
                                     $statusText = $row['status_pesanan'] ? 'Selesai' : 'Proses';
                                 ?>
                                 <tr>
-                                    <td><?= $no++ ?></td>
-                                    <td><?= htmlspecialchars($row['nama_pelanggan']) ?></td>
-                                    <td><?= htmlspecialchars($row['no_telp']) ?></td>
+                                    <td><?= $row['no_pesanan'] ?></td>
+                                    <td><?= $row['nama_pelanggan'] ?></td>
+                                    <td><?= $row['no_telp'] ?></td>
                                     <td><?= date('d/m/Y H:i', strtotime($row['waktu_pesan'])) ?></td>
-                                    <td>
-                                        <span class="badge rounded-pill <?= $statusClass ?>">
-                                            <?= $statusText ?>
-                                        </span>
-                                    </td>
+
                                     <td class="text-center action-buttons">
                                         <a href="edit_data.php?no_pesanan=<?= $row['no_pesanan'] ?>" 
                                            class="btn btn-sm btn-warning me-1" 
                                            title="Edit">
                                             <i class="fas fa-edit"></i>
-                                        </a>
-                                        <a href="delete_data.php?no_pesanan=<?= $row['no_pesanan'] ?>" 
-                                           class="btn btn-sm btn-danger" 
-                                           title="Hapus"
-                                           onclick="return confirm('Yakin ingin menghapus data ini?')">
-                                            <i class="fas fa-trash-alt"></i>
                                         </a>
                                     </td>
                                 </tr>
@@ -170,33 +159,24 @@ if (!$result) {
                         </table>
                     </div>
                     
-                    <!-- Basic Pagination -->
-                    <!-- <nav aria-label="Page navigation">
-                        <ul class="pagination justify-content-center">
-                            <li class="page-item disabled">
-                                <a class="page-link" href="#" tabindex="-1">Previous</a>
-                            </li>
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">Next</a>
-                            </li>
-                        </ul>
-                    </nav> -->
+
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white py-3">
-        <div class="container text-center">
-            <small>&copy; <?= date('Y') ?> BoerJo Admin Dashboard</small>
-        </div>
-    </footer>
+  
+  <footer class="bg-dark text-white mt-5 py-3">
+  <div class="text-center">
+       <small>
+        &copy; 2025 BoerJo | 
+        <a href="#" class="text-white text-decoration-none">Warung Gacor</a>
+      </small>
+  </div>
+</footer>
 
-    <!-- Bootstrap JS (required for some components) -->
+
+    <
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

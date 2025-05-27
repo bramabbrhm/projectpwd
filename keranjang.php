@@ -2,7 +2,7 @@
 session_start();
 include "koneksi.php";
 
-// Check if user is logged in
+
 if (!isset($_SESSION['no_pesanan'])) {
     header("Location: logincust.php?pesan=belum-login");
     exit();
@@ -10,11 +10,18 @@ if (!isset($_SESSION['no_pesanan'])) {
 
 $no_pesanan = $_SESSION['no_pesanan'];
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['checkout'])) {
+    $cek_pesanan = mysqli_fetch_assoc(mysqli_query($connect, "SELECT COUNT(*) AS jumlah FROM jml_pesanan WHERE no_pesanan = $no_pesanan"));
+
+    if ($cek_pesanan['jumlah'] == 0) {
+        echo "<script>alert('Keranjang kosong. Silakan tambahkan menu terlebih dahulu.'); window.location='pemesanan.php';</script>";
+        exit();
+    }
+    
     $nama_pelanggan = $_POST['nama_pelanggan'];
     $no_telp = $_POST['no_telp'];
     $metode_bayar = $_POST['metode_bayar'];
     
-    // Update order with customer info and payment method
+
     mysqli_query($connect, 
         "UPDATE pesanan SET 
             nama_pelanggan = '$nama_pelanggan',
@@ -30,8 +37,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['checkout'])) {
     exit();
 }
 
-
-// Handle actions
 if (isset($_GET['action'])) {
     switch ($_GET['action']) {
         case 'delete_item':
@@ -45,7 +50,7 @@ if (isset($_GET['action'])) {
             mysqli_query($connect, "DELETE FROM jml_pesanan WHERE no_pesanan = $no_pesanan");
             mysqli_query($connect, "DELETE FROM pesanan WHERE no_pesanan = $no_pesanan");
             unset($_SESSION['no_pesanan']);
-            header("Location: logincust.php?pesan=order-canceled");
+            header("Location: logoutcust.php");
             exit();
             break;
             
@@ -53,7 +58,7 @@ if (isset($_GET['action'])) {
             if (isset($_POST['update'])) {
                 foreach ($_POST['quantity'] as $id_pesanan => $quantity) {
                     if ($quantity > 0) {
-                        // Get menu price
+
                         $item = mysqli_fetch_assoc(mysqli_query($connect, 
                             "SELECT m.harga FROM jml_pesanan j 
                              JOIN menu m ON j.id_menu = m.id_menu 
@@ -68,7 +73,7 @@ if (isset($_GET['action'])) {
                     }
                 }
                 
-                // Update total price
+    
                 $total = mysqli_fetch_assoc(mysqli_query($connect, 
                     "SELECT SUM(subtotal) AS total FROM jml_pesanan WHERE no_pesanan = $no_pesanan"));
                 
@@ -77,11 +82,14 @@ if (isset($_GET['action'])) {
                     WHERE no_pesanan = $no_pesanan");
             }
             break;
+
+            case 'tambah_pesanan':
+                break;
     }
 }
 
-// Get order details
-$order = mysqli_fetch_assoc(mysqli_query($connect, 
+
+$pesanan = mysqli_fetch_assoc(mysqli_query($connect, 
     "SELECT * FROM pesanan WHERE no_pesanan = $no_pesanan"));
 
 $items = mysqli_query($connect,
@@ -121,7 +129,7 @@ $items = mysqli_query($connect,
 <div class="container py-5">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h2>Keranjang Pesanan</h2>
-        <a href="pemesanan.php" class="btn btn-outline-primary">Tambah Menu</a>
+        <a href="pemesanan.php?action=tambah_pesanan" class="btn btn-outline-primary">Tambah Menu</a>
     </div>
     
    <form method="post" action="keranjang.php?action=update_quantity">
@@ -188,7 +196,7 @@ $items = mysqli_query($connect,
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center">
                     <h4 class="mb-0">Total Pesanan</h4>
-                    <h3 class="mb-0 text-success">Rp <?= number_format($order['total_harga'] ?? 0, 0, ',', '.') ?></h3>
+                    <h3 class="mb-0 text-success">Rp <?= number_format($pesanan['total_harga'] ?? 0, 0, ',', '.') ?></h3>
                 </div>
                 <hr>
                 
@@ -196,14 +204,15 @@ $items = mysqli_query($connect,
                     <div class="col-md-6">
                         <label class="form-label">Nama Pelanggan</label>
                         <input type="text" name="nama_pelanggan" class="form-control" 
-                               value="<?= $order['nama_pelanggan'] ?? '' ?>" required>
+                               value="<?= $pesanan['nama_pelanggan'] ?? '' ?>" required>
                     </div>
                     <div class="col-md-6">
                         <label class="form-label">Nomor Telepon</label>
                         <input type="tel" name="no_telp" class="form-control" 
-                               value="<?= $order['no_telp'] ?? '' ?>" required>
+                               value="<?= $pesanan['no_telp'] ?? '' ?>" required>
                     </div>
                 </div>
+                
                 
                 <div class="mb-4">
                     <label class="form-label">Metode Pembayaran</label>
