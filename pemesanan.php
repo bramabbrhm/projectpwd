@@ -7,7 +7,7 @@ if (!isset($_SESSION['no_pesanan'])) {
     exit();
 }
 
-
+$no_pesanan = $_SESSION['no_pesanan'];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['jumlah'])) {
 
